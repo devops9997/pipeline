@@ -2,7 +2,7 @@ pipeline {
 	agent none  
 	stages {
 		stage('BUILD') {
-			agent 'agent1'
+			agent 'agent2'
 			steps {
 				sh '''
 					pwd
