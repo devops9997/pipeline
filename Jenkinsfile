@@ -1,7 +1,8 @@
 pipeline {
-	agent any  
+	agent none  
 	stages {
 		stage('BUILD') {
+			agent 'agent1'
 			steps {
 				sh '''
 					pwd
