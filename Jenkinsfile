@@ -13,7 +13,7 @@ pipeline {
 		}
 		
 		stage('TEST') {
-			agent { label 'agent2' }
+			agent { label 'agent' }
 			steps {
 				sh '''
 					pwd
@@ -24,7 +24,7 @@ pipeline {
 		}
 		
 		stage('DEPLOY') {
-			agent { label 'agent2' }
+			agent { label 'master' }
 			steps {
 				sh '''
 					pwd
