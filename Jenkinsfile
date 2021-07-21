@@ -12,12 +12,19 @@ pipeline {
 		}
 		
 		stage('TEST') {
-			steps {
-				sh '''
-					pwd
-					sleep 5
-					echo This is the fist stage: TEST
-				'''
+			parallel {
+				steps('test1') {
+					sh 'sleep 3'
+					echo "phase1"
+				}
+				steps('test2') {
+					sh 'sleep 3'
+					echo "phase2"
+				}
+				steps('test3') {
+					sh 'sleep 3'
+					echo "phase3"
+				}
 			}	
 		}
 		
