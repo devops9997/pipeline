@@ -13,17 +13,23 @@ pipeline {
 		
 		stage('TEST') {
 			parallel {
-				steps('test1') {
-					sh 'sleep 3'
-					echo "phase1"
+				stage('test1') {
+					steps {
+						sh 'sleep 3'
+						echo "phase1"
+					}
 				}
-				steps('test2') {
-					sh 'sleep 3'
-					echo "phase2"
+				stage('test2') {
+					steps {
+						sh 'sleep 3'
+						echo "phase2"
+					}
 				}
-				steps('test3') {
-					sh 'sleep 3'
-					echo "phase3"
+				stage('test3') {
+					steps {
+						sh 'sleep 3'
+						echo "phase3"
+					}
 				}
 			}	
 		}
